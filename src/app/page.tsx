@@ -1,4 +1,4 @@
-import SurveyRadar from '../components/survey-radar'
+import SurveyRadar from 'src/components/survey-radar.tsx'
 
 export default function Home() {
   return (
