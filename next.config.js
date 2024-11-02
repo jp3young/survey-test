@@ -1,11 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  typescript: {
-    ignoreBuildErrors: true
+  webpack: (config) => {
+    config.resolve.fallback = { fs: false };
+    return config;
   },
-  experimental: {
-    typedRoutes: true
-  }
 }
 
 module.exports = nextConfig
