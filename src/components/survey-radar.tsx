@@ -8,6 +8,19 @@ import { Slider } from '@/components/ui/slider';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { BookOpen, Target, Printer, Play } from 'lucide-react';
 
+interface CategoryData {
+  types: string[];
+  stats: string[];
+}
+
+interface VideoSuggestions {
+  [key: string]: CategoryData;
+}
+
+interface Categories {
+  [key: string]: string[];
+}
+
 const categories = {
   "Awareness": [
     "How would you rate the current level of awareness of your brand/business with your target market?",
@@ -107,7 +120,12 @@ const detailedLabels = [
   "referrers", "sales engagement", "utility"
 ];
 
-const CustomSlider = ({ value, onChange }) => (
+interface CustomSliderProps {
+  value: number;
+  onChange: (value: number[]) => void;
+}
+
+const CustomSlider: React.FC<CustomSliderProps> = ({ value, onChange }) => (
   <div className="relative py-4">
     <Slider
       value={[value]}
