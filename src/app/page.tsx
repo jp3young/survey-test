@@ -1,4 +1,4 @@
-import SurveyRadar from '../components/survey-radar'
+import SurveyRadar from '@/components/survey-radar'
 
 export default function Home() {
   return (
